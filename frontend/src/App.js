@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+import cors from "cors";
+
+app.use(cors({
+  origin: "*"
+}));
 
 import {
   Chart as ChartJS,
@@ -24,7 +29,7 @@ ChartJS.register(
   Filler
 );
 
-const API = "http://localhost:5000";
+const API = "https://linkedin-ai-post-zjo5.onrender.com/";
 
 const scoreLabels = [
   ["hook", "Hook"],
