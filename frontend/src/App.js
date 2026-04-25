@@ -24,7 +24,12 @@ ChartJS.register(
   Filler
 );
 
-const API = "https://linkedin-ai-post-zjo5.onrender.com/";
+const DEFAULT_API =
+  process.env.NODE_ENV === "production"
+    ? "https://linkedin-ai-post-zjo5.onrender.com"
+    : "http://localhost:5000";
+
+const API = (process.env.REACT_APP_API_URL || DEFAULT_API).replace(/\/$/, "");
 
 const scoreLabels = [
   ["hook", "Hook"],
@@ -123,7 +128,7 @@ export default function App() {
       );
     } catch (err) {
       console.error(err);
-      setFeedback("Server error. Check whether the backend is running on port 5000.");
+      setFeedback(`Server error. Check whether the backend is running at ${API}.`);
     } finally {
       setIsGenerating(false);
     }
