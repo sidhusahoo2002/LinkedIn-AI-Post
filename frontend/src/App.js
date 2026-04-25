@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-import cors from "cors";
-
-app.use(cors({
-  origin: "*"
-}));
 
 import {
   Chart as ChartJS,
