@@ -7,7 +7,6 @@ import cors from "cors";
 import { generateSinglePost, scorePost } from "./services/ai.js";
 import { postToLinkedIn } from "./services/linkedin.js";
 
-import { GoogleGenAI } from "@google/genai";
 
 const app = express();
 app.use(express.json());
