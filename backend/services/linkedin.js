@@ -1,10 +1,10 @@
-import { chromium } from "playwright";
-import path from "path";
+/*import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const storageStatePath = path.resolve(__dirname, "..", "auth.json");
+
 
 async function clickFirstVisibleLocator(candidates, timeout = 5000) {
   for (const candidate of candidates) {
@@ -203,5 +203,46 @@ export async function postToLinkedIn(content) {
     throw err;
   } finally {
     await browser.close();
+  }
+}*/
+
+// backend/services/linkedin.js
+
+/**
+ * Simulated LinkedIn posting service
+ * Safe for cloud deployment (Render)
+ * Replace later with real automation if needed
+ */
+
+export async function postToLinkedIn(content) {
+  try {
+    if (!content || content.trim() === "") {
+      throw new Error("Post content is empty");
+    }
+
+    // Simulate posting delay (for realistic UX)
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Log post content (acts as "posting")
+    console.log("\n📢 ===== LINKEDIN POST (SIMULATION) =====");
+    console.log(content);
+    console.log("========================================\n");
+
+    return {
+      success: true,
+      message: "Post successfully simulated",
+      data: {
+        content,
+        timestamp: new Date().toISOString()
+      }
+    };
+
+  } catch (error) {
+    console.error("❌ LinkedIn posting error:", error.message);
+
+    return {
+      success: false,
+      error: error.message
+    };
   }
 }
