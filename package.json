@@ -1,0 +1,11 @@
+{
+  "name": "linkedin-ai-agent",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace frontend"
+  }
+}
